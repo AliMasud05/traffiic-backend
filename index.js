@@ -14,14 +14,16 @@ dotenv.config({ path: path.join(__dirname, ".env") });
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://exam.avtoskola-varketilshi.ge"
-  ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
-}));
+app.use(
+  cors({
+   origin: [
+  "https://new-traffic-frontend.vercel.app",
+  "http://localhost:3000",
+],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  })
+);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
